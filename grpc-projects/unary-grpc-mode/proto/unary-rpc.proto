@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package chat;
+
+option go_package = "unary-rpc-modes/proto";
+
+service ChatService {
+    rpc SendMessage(HelloRequest) returns (HelloResponse) {};
+}
+
+message HelloRequest {
+    string RequestString = 1;
+}
+
+message HelloResponse {
+    string ResponseString = 1;
+}

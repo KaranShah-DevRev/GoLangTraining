@@ -1,0 +1,16 @@
+syntax="proto3";
+package chat;
+
+option go_package = "client-stream-modes/proto";
+
+service ChatService {
+    rpc SendServerStream(HelloRequest) returns (stream HelloResponse) {};
+}
+
+message HelloRequest {
+    string RequestString = 1;
+}
+
+message HelloResponse {
+    string ResponseString = 1;
+}
